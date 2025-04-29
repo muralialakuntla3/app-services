@@ -29,7 +29,9 @@ app service demo python code
 
 # Add PostgreSQL Environment Variables
 - In your App Service → Left menu → Configuration
-- Under Application settings, click + New application setting and add:
+- Under Application settings, click Environment variables and add:
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/47983d96-928e-49a0-be0c-6240412a7cfa" />
+
 
 # Upload the Flask ZIP App:
 - After creation, go to your App Service
