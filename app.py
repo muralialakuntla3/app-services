@@ -4,14 +4,24 @@ import os
 
 app = Flask(__name__)
 
-# PostgreSQL connection using environment variables
-conn = psycopg2.connect(
-    host=os.environ['DB_HOST'],
-    database=os.environ['DB_NAME'],
-    user=os.environ['DB_USER'],
-    password=os.environ['DB_PASSWORD']
-)
+# Read connection string from environment variable
+connection_string = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
+
+# Connect to PostgreSQL
+conn = psycopg2.connect(connection_string)
 cursor = conn.cursor()
+
+# Create 'users' table if it does not exist
+create_table_query = """
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    number VARCHAR(20)
+);
+"""
+cursor.execute(create_table_query)
+conn.commit()
 
 # HTML Form Template
 form_template = """
