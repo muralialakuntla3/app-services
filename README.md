@@ -36,11 +36,12 @@ app service demo python code
 # Upload the Flask ZIP App:
 - After creation, go to your App Service
 - In the left menu, click Deployment Center
-Choose:
-  Source: Local Git or ZIP
-  Build provider: App Service build service
-  Upload your flask-app.zip file
-  Click Save
+- Choose:
+  - Source: GitHub
+  - Authorize your github 
+  - select the repo & branch
+  - Click Save
+<img width="685" alt="image" src="https://github.com/user-attachments/assets/d8127e5b-49b2-426d-84d4-f5e835c6fe75" />
 
 # Access Your Web App
 - In Overview tab of your App Service
